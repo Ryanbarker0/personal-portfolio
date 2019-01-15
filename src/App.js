@@ -1,28 +1,55 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+import Navbar from './components/Navbar/Navbar'
+import SideDrawer from './components/SideDrawer/SideDrawer'
+import Backdrop from './components/Backdrop/Backdrop'
+import Home from './components/Home'
+import Projects from './components/Projects'
+import About from './components/About'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+
+  state = {
+    sideDrawerOpen: false
   }
+
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen}
+    })
+  }
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false})
+  }
+
+  render() {
+    let sideDrawer;
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler}/>
+    }
+    return (
+    <div style={{height: '100%'}}>
+     <div className='nav-container'>
+      <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
+    </div>
+      <SideDrawer show={this.state.sideDrawerOpen}/>
+      {backdrop}
+      <Router>
+        <div>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/projects' component={Projects} />
+          <Route exact path='/about' component={About} />
+        </div>
+      </Router>
+    </div>
+    )
+  }
+
 }
+
 
 export default App;
