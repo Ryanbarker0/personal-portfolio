@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar'
 import SideDrawer from './components/SideDrawer/SideDrawer'
 import Backdrop from './components/Backdrop/Backdrop'
-import Home from './components/Home'
+import Home from './components/Home/Home'
 import Projects from './components/Projects'
 import About from './components/About'
 
