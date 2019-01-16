@@ -5,7 +5,9 @@ import Navbar from './components/Navbar/Navbar'
 import SideDrawer from './components/SideDrawer/SideDrawer'
 import Backdrop from './components/Backdrop/Backdrop'
 import Home from './components/Home/Home'
-import Projects from './components/Projects'
+import Projects from './components/Projects/Projects'
+import SnapSpot from './components/Projects/Items/SnapSpot'
+import QuizBuzz from './components/Projects/Items/QuizBuzz'
 import About from './components/About'
 
 class App extends Component {
@@ -42,7 +44,10 @@ class App extends Component {
         <div>
           <Route exact path='/' component={Home} />
           <Route exact path='/projects' component={Projects} />
+          <Route exact path='/projects/snapspot' component={SnapSpot} />
+          <Route exact path='/projects/quizbuzz' component={QuizBuzz} />
           <Route exact path='/about' component={About} />
+
         </div>
       </Router>
     </div>

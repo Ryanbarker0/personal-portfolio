@@ -13,7 +13,7 @@
     color: white;
     
     /* Background styles */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/5rHXKF8/ramon-salinero-271002-unsplash.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23,10 +23,17 @@
 .hero h1 {
     /* Text styles */
     font-size: 5em;
+    font-family: Raleway;
 
     /* Margins */
     margin-top: 0;
     margin-bottom: 0.5em
+}
+
+.hero h4 {
+        /* Text styles */
+    font-size: 1em;
+    font-family: Raleway;
 }
 
 .hero .btn {
@@ -44,6 +51,7 @@
     color: white;
     text-decoration: none;
     font-size: 1.5em;
+    font-family: Raleway;
     
     /* Border styles */
     border: 3px solid white;

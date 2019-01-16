@@ -7,9 +7,10 @@ class Home extends Component {
         return (
             <div className='hero'>
                 <div className='hero-inner'>
-                <h1>Ryan Barker Portfolio</h1>
-                    <p>Im Text To Fill The Page</p>
-                    <a href="/projects" className="btn"> find out more </a>
+                <h1>R G B</h1>
+                    <h4>Portfolio &
+                    Project Showcase</h4>
+                    <a href="/projects/snapspot" className="btn"> Discover </a>
                 </div> 
             </div>
         )
