@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Router, Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from './components/Navbar/Navbar'
 import SideDrawer from './components/SideDrawer/SideDrawer'
@@ -8,7 +8,9 @@ import Home from './components/Home/Home'
 import Projects from './components/Projects/Projects'
 import SnapSpot from './components/Projects/Items/SnapSpot'
 import QuizBuzz from './components/Projects/Items/QuizBuzz'
+import MovieDB from './components/Projects/Items/MovieDB'
 import About from './components/About'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 class App extends Component {
 
@@ -27,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    let sideDrawer;
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
@@ -35,21 +36,38 @@ class App extends Component {
     }
     return (
     <div style={{height: '100%'}}>
-     <div className='nav-container'>
-      <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
-    </div>
+      <div className='nav-container'>
+        <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
+      </div>
       <SideDrawer show={this.state.sideDrawerOpen}/>
       {backdrop}
-      <Router>
-        <div>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/projects' component={Projects} />
-          <Route exact path='/projects/snapspot' component={SnapSpot} />
-          <Route exact path='/projects/quizbuzz' component={QuizBuzz} />
-          <Route exact path='/about' component={About} />
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/projects' component={Projects} />
+            <Route render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                    key={location.key}
+                    timeout={300}
+                    classNames="fade"
+                  >
+                  <div className='page'>
+                 <Switch location={location}>
+                    <Route exact path='/projects/snap-spot' component={SnapSpot} />
+                    <Route path='/projects/quiz-buzz' component={QuizBuzz} />
+                    <Route path='/projects/movie-database' component={MovieDB} />
 
-        </div>
-      </Router>
+                  </Switch>
+                  </div>
+                </CSSTransition>
+              </TransitionGroup>
+             )} />
+
+
+            <Route exact path='/about' component={About} />
+          </div>
+        
+      
     </div>
     )
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './SideDrawer.css'
 
 import { IconContext } from 'react-icons'
@@ -13,25 +14,25 @@ const sideDrawer = props => {
     return (<nav className={drawerClasses}>
         <ul>
             <li> 
-                <a href='/projects'>
+                <Link to='/projects/snap-spot' className='item'>
                     <IconContext.Provider value={{ className: 'icon' }}>
                         <FaRocket /> 
                     </IconContext.Provider> Projects
-                </a> 
+                </Link> 
             </li>
             <li>
-                <a href='/about'>
+                <Link to='/about' className='item'>
                     <IconContext.Provider value={{ className: 'icon' }}>
                         <FaUserCircle />
                     </IconContext.Provider> About
-                </a>
+                </Link>
             </li>
             <li>
-                <a href='#'>
+                <Link to='#' className='item'>
                     <IconContext.Provider value={{ className: 'icon' }}>
                         <FaEnvelope />
                     </IconContext.Provider> Contact
-                </a>
+                </Link>
             </li>
 
         </ul>

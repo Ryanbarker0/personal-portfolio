@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { IconContext } from 'react-icons'
+import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import './Item.css'
 
@@ -10,16 +11,16 @@ class snapSpot extends Component {
             <div className='page-content'>
                 <div className='project-hero'>
                 <div className='project-pagination'>
-                    <a className='project-arrow prev' href='#'>
+                    <Link to='/projects/movie-database' className='project-arrow prev'>
                         <IconContext.Provider value={{ size: '2em' }}>
                             <FaArrowLeft />
                         </IconContext.Provider>
-                    </a>
-                    <a className='project-arrow next' href='#'>
+                    </Link>
+                    <Link to='/projects/quiz-buzz' className='project-arrow next'>
                         <IconContext.Provider value={{ size: '2em' }}>
                             <FaArrowRight />
                         </IconContext.Provider>
-                    </a>
+                    </Link>
                 </div>
                     <div className='project-info'>
                         <div className='project-year'>

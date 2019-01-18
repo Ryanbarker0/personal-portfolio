@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import './Item.css'
 
-class quizBuzz extends Component {
+class movieDb extends Component {
 
     render() {
         return (
             <div className='page-content'>
                 <div className='project-hero'>
                 <div className='project-pagination'>
-                    <Link to='/projects/snap-spot' className='project-arrow prev'>
+                    <Link to='/projects/quiz-buzz' className='project-arrow prev'>
                         <IconContext.Provider value={{ size: '2em' }}>
                             <FaArrowLeft />
                         </IconContext.Provider>
                     </Link>
-                    <Link to='/projects/movie-database' className='project-arrow next' >
+                    <Link to='/projects/snap-spot' className='project-arrow next' >
                         <IconContext.Provider value={{ size: '2em' }}>
                             <FaArrowRight />
                         </IconContext.Provider>
@@ -24,12 +24,12 @@ class quizBuzz extends Component {
                 </div>
                     <div className='project-info'>
                         <div className='project-year'>
-                            November 2018
+                            September 2018
                         </div>
                         <h1 className='project-title'>
-                            Quiz Buzz
+                            Movie Database
                         </h1>
-                        <p className='project-framework'>Ruby on Rails</p>
+                        <p className='project-framework'>Vanilla Ruby</p>
                     </div>
                 </div>
                 <article className='post wrapper'>
@@ -51,4 +51,4 @@ class quizBuzz extends Component {
     }
 }
 
-export default quizBuzz
+export default movieDb

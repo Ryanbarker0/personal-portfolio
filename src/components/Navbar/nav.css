@@ -5,6 +5,7 @@
     width: 100%;
     background-color: black;
     height: 56px;
+    z-index: 1;
 }
 
 .navbar__navigation {
@@ -50,7 +51,7 @@ div.container
 {
     font-family: Raleway;
     margin: 0 auto;
-	padding: 10em 3em;
+	padding: 0em 3em;
 	text-align: center;
 }
 

@@ -16,14 +16,24 @@
     transform: translateX(0);
 }
 
-.side-drawer ul {display: block;margin: 40px;padding: 0;list-style: none;opacity: 0.5;
+.side-drawer ul {display: block;
+    margin: 40px;
+    padding: 0;
+    list-style: none;
+    opacity: 0.5;
 }
 
 .side-drawer li {
 	color: #dfe5eb;
 	padding: 12px 0;
-	cursor: pointer;
+    cursor: pointer;
+    font-family: Raleway;
 }
+
+.side-drawer ul li .item {
+    border-bottom: 1px solid white;
+}
+
 
 /* .side-drawer li:before {
 	font-family: "ico";

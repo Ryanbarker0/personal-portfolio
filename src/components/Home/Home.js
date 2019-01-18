@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 class Home extends Component {
@@ -10,7 +11,7 @@ class Home extends Component {
                 <h1>R G B</h1>
                     <h4>Portfolio &
                     Project Showcase</h4>
-                    <a href="/projects/snapspot" className="btn"> Discover </a>
+                    <Link to="/projects/snap-spot" className="btn"> Explore </Link>
                 </div> 
             </div>
         )
