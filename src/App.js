@@ -11,6 +11,7 @@ import QuizBuzz from './components/Projects/Items/QuizBuzz'
 import MovieDB from './components/Projects/Items/MovieDB'
 import About from './components/About'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { Spring } from 'react-spring'
 
 class App extends Component {
 
@@ -35,12 +36,16 @@ class App extends Component {
       backdrop = <Backdrop click={this.backdropClickHandler}/>
     }
     return (
-    <div style={{height: '100%'}}>
+      <Spring from={{ opacity: 0, marginTop: -1000 }} to={{ opacity: 1, marginTop: 0 }}>
+        {props => (
+
+    <div style={props}>
       <div className='nav-container'>
         <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
-      </div>
+      </div>      
       <SideDrawer show={this.state.sideDrawerOpen}/>
       {backdrop}
+
           <div>
             <Route exact path='/' component={Home} />
             <Route exact path='/projects' component={Projects} />
@@ -66,9 +71,12 @@ class App extends Component {
 
             <Route exact path='/about' component={About} />
           </div>
-        
+
       
     </div>
+            )
+        }
+        </Spring>
     )
   }
 
