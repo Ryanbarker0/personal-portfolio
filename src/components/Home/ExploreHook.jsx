@@ -13,7 +13,7 @@ const ExploreComponent = () => {
         })
     return <animated.div style={props}>
                 <Link to="/projects/snap-spot" className='btn'>
-                    Explore 
+                    E X P L O R E 
                 </Link>
             </animated.div>
 }
