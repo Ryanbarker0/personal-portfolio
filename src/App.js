@@ -36,16 +36,13 @@ class App extends Component {
       backdrop = <Backdrop click={this.backdropClickHandler}/>
     }
     return (
-      <Spring from={{ opacity: 0, marginTop: -1000 }} to={{ opacity: 1, marginTop: 0 }}>
-        {props => (
 
-    <div style={props}>
+    <div className='page'>
       <div className='nav-container'>
         <Navbar drawerClickHandler={this.drawerToggleClickHandler}/>
       </div>      
       <SideDrawer show={this.state.sideDrawerOpen}/>
       {backdrop}
-
           <div>
             <Route exact path='/' component={Home} />
             <Route exact path='/projects' component={Projects} />
@@ -75,9 +72,6 @@ class App extends Component {
       
     </div>
             )
-        }
-        </Spring>
-    )
   }
 
 }
