@@ -44,7 +44,7 @@ class App extends Component {
       <SideDrawer show={this.state.sideDrawerOpen}/>
       {backdrop}
           <div>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/home' component={Home} />
             <Route exact path='/projects' component={Projects} />
             <Route render={({ location }) => (
               <TransitionGroup>
