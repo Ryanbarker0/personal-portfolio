@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Link } from "react-router-dom";
 import './nav.css'
+import resume from './files/resume.pdf'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 
 const Navbar = props => (
@@ -16,6 +17,7 @@ const Navbar = props => (
                 
                     <Link to='/projects/snap-spot'>Projects</Link>
                     <Link to='/about'>About</Link>
+                    <a href={resume} target="_blank">Résumé</a>
                 </div>
             </div>
         </nav>
