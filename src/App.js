@@ -9,7 +9,7 @@ import Projects from './components/Projects/Projects'
 import SnapSpot from './components/Projects/Items/SnapSpot'
 import QuizBuzz from './components/Projects/Items/QuizBuzz'
 import MovieDB from './components/Projects/Items/MovieDB'
-import About from './components/About/About'
+// import About from './components/About/About'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Spring } from 'react-spring'
 
@@ -65,7 +65,7 @@ class App extends Component {
              )} />
 
 
-            <Route exact path='/about' component={About} />
+            {/* <Route exact path='/about' component={About} /> */}
           </div>
 
       
